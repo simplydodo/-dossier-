@@ -74,7 +74,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Photo Upload Styling */
         .photo-upload-box {
             width: 130px;
             height: 150px;
@@ -159,7 +158,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Checkbox Styling */
         .checkbox-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -223,7 +221,7 @@
         <div>
             <span class="badge">RESTRICTED ACCESS</span>
             <h1>CLASSIFIED DOSSIER</h1>
-            <div class="subtitle" id="dossierSubtitle">LOADING PROTOCOL...</div>
+            <div class="subtitle" id="dossierSubtitle">SUBJECT: SHREE | PROTOCOL: SOULMATE</div>
         </div>
         <div class="photo-upload-box" id="photoBox">
             <span class="photo-text">📍 Place photo of yourself here</span>
@@ -237,11 +235,11 @@
         <div class="grid-2">
             <div class="form-group">
                 <label>Codename / Real Name</label>
-                <input type="text" placeholder="Enter name or codename..." required>
+                <input type="text" id="agentName" placeholder="Enter name or codename..." required>
             </div>
             <div class="form-group">
                 <label>Nickname You Secretly Love</label>
-                <input type="text" placeholder="What should I call you?">
+                <input type="text" id="nickname" placeholder="What should I call you?">
             </div>
         </div>
 
@@ -249,50 +247,50 @@
         <div class="grid-2">
             <div class="form-group">
                 <label>Top 3 Go-To Songs</label>
-                <input type="text" placeholder="1... 2... 3...">
+                <input type="text" id="songs" placeholder="1... 2... 3...">
             </div>
             <div class="form-group">
                 <label>Top Comfort Movies/Shows</label>
-                <input type="text" placeholder="What do we binge together?">
+                <input type="text" id="movies" placeholder="What do we binge together?">
             </div>
         </div>
 
         <div class="section-title">3. [STRATEGIC ENGAGEMENT & ROMANCE DIRECTIVES]</div>
         <label>Tick all directives you agree to execute with me:</label>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox"> Surprise midnight dates</label>
-            <label class="checkbox-item"><input type="checkbox"> Pinned against the wall looks</label>
-            <label class="checkbox-item"><input type="checkbox"> Late-night whispered secrets</label>
-            <label class="checkbox-item"><input type="checkbox"> Unexpected tight hugs from behind</label>
-            <label class="checkbox-item"><input type="checkbox"> Being completely goofy in public</label>
-            <label class="checkbox-item"><input type="checkbox"> Spontaneous weekend getaways</label>
-            <label class="checkbox-item"><input type="checkbox"> Hand-written romantic letters</label>
-            <label class="checkbox-item"><input type="checkbox"> Forehead kisses when tired</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Surprise midnight dates"> Surprise midnight dates</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Pinned against the wall looks"> Pinned against the wall looks</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Late-night whispered secrets"> Late-night whispered secrets</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Unexpected tight hugs from behind"> Unexpected tight hugs from behind</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Being completely goofy in public"> Being completely goofy in public</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Spontaneous weekend getaways"> Spontaneous weekend getaways</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Hand-written romantic letters"> Hand-written romantic letters</label>
+            <label class="checkbox-item"><input type="checkbox" class="directive" value="Forehead kisses when tired"> Forehead kisses when tired</label>
         </div>
 
         <div class="section-title">4. [DEEP PERSONAL INTELLIGENCE]</div>
         <div class="form-group">
             <label>1. What is a secret dream you've never told anyone?</label>
-            <textarea rows="2" placeholder="Tell me what nobody else knows..."></textarea>
+            <textarea id="secretDream" rows="2" placeholder="Tell me what nobody else knows..."></textarea>
         </div>
         <div class="form-group">
             <label>2. How do you want to be treated when you are silently sad?</label>
-            <textarea rows="2" placeholder="Do you want space, hugs, or food?"></textarea>
+            <textarea id="silentlySad" rows="2" placeholder="Do you want space, hugs, or food?"></textarea>
         </div>
         <div class="form-group">
             <label>3. What is your ultimate unspoken romantic fantasy?</label>
-            <textarea rows="2" placeholder="Don't be shy, this is classified..."></textarea>
+            <textarea id="romanticFantasy" rows="2" placeholder="Don't be shy, this is classified..."></textarea>
         </div>
         <div class="form-group">
             <label>4. Describe the exact moment or vibe that makes your heart skip a beat.</label>
-            <textarea rows="2" placeholder="What turns on your butterflies instantly?"></textarea>
+            <textarea id="heartSkip" rows="2" placeholder="What turns on your butterflies instantly?"></textarea>
         </div>
 
         <div class="section-title">5. [PHYSICAL & EMOTIONAL BOUNDARIES]</div>
         <div class="grid-2">
             <div class="form-group">
                 <label>Cuddling Stance</label>
-                <select>
+                <select id="cuddleStance">
                     <option>Big Spoon</option>
                     <option>Little Spoon</option>
                     <option>Both Interlocked</option>
@@ -300,7 +298,7 @@
             </div>
             <div class="form-group">
                 <label>Public Display of Affection (PDA)</label>
-                <select>
+                <select id="pdaPreference">
                     <option>Discreet & Subtle</option>
                     <option>Full-On Hand Holding & Kisses</option>
                     <option>Private Only</option>
@@ -314,15 +312,9 @@
 
 <script>
     // ============================================================
-    // YAHAN APNA NAAM YA BHAI KI BANDI KA NAAM AUR PROTOCOL CHANGE KARO
+    // APNA WHATSAPP NUMBER YAHAN REPLACE KARO (91 ke saath):
+    const YOUR_WHATSAPP_NUMBER = "917068634975"; 
     // ============================================================
-    const SUBJECT_NAME = "SHREE";        // <--- Partner Name (e.g. SHREE)
-    const PROTOCOL_CODENAME = "SOULMATE"; // <--- Protocol Name (e.g. VIGIL / SOULMATE / FOREVER)
-    // ============================================================
-
-    // Header updates automatically
-    document.getElementById("dossierSubtitle").innerText = 
-        `SUBJECT: ${SUBJECT_NAME.toUpperCase()} | PROTOCOL: ${PROTOCOL_CODENAME.toUpperCase()}`;
 
     function previewImage(event) {
         const reader = new FileReader();
@@ -336,7 +328,42 @@
     }
 
     function submitDossier() {
-        alert(`TRANSMISSION COMPLETE.\n\nResponses for ${SUBJECT_NAME} have been securely logged. Expect romantic contact soon. 💗✨`);
+        const name = document.getElementById('agentName').value || 'Not specified';
+        const nickname = document.getElementById('nickname').value || 'None';
+        const songs = document.getElementById('songs').value || 'None';
+        const movies = document.getElementById('movies').value || 'None';
+        
+        const checkedDirectives = Array.from(document.querySelectorAll('.directive:checked'))
+            .map(cb => `• ${cb.value}`)
+            .join('\n');
+
+        const secretDream = document.getElementById('secretDream').value || 'None';
+        const silentlySad = document.getElementById('silentlySad').value || 'None';
+        const romanticFantasy = document.getElementById('romanticFantasy').value || 'None';
+        const heartSkip = document.getElementById('heartSkip').value || 'None';
+        const cuddle = document.getElementById('cuddleStance').value;
+        const pda = document.getElementById('pdaPreference').value;
+
+        let text = `🚨 *CLASSIFIED DOSSIER TRANSMISSION* 🚨\n`;
+        text += `*SUBJECT:* SHREE\n`;
+        text += `*PROTOCOL:* SOULMATE\n\n`;
+        text += `👤 *Agent:* ${name} (Nickname: ${nickname})\n`;
+        text += `🎵 *Songs:* ${songs}\n`;
+        text += `🎬 *Movies:* ${movies}\n\n`;
+        text += `🔥 *Romance Directives Accepted:*\n${checkedDirectives || 'None selected'}\n\n`;
+        text += `💭 *Secret Dream:* ${secretDream}\n`;
+        text += `🖤 *When Silently Sad:* ${silentlySad}\n`;
+        text += `✨ *Romantic Fantasy:* ${romanticFantasy}\n`;
+        text += `💓 *Heart Skip Vibe:* ${heartSkip}\n\n`;
+        text += `🫂 *Cuddle Stance:* ${cuddle}\n`;
+        text += `💋 *PDA:* ${pda}\n\n`;
+        text += `*Status:* TRANSMISSION COMPLETE 🖤`;
+
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodedText}`;
+
+        alert(`TRANSMISSION COMPLETE.\n\nRedirecting to secure WhatsApp channel to log responses for SHREE. 🖤✨`);
+        window.open(whatsappUrl, '_blank');
     }
 </script>
 
