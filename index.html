@@ -224,9 +224,9 @@
             <div class="subtitle" id="dossierSubtitle">SUBJECT: SHREE | PROTOCOL: SOULMATE</div>
         </div>
         <div class="photo-upload-box" id="photoBox">
-            <span class="photo-text">📍 Place photo of yourself here</span>
+            <span class="photo-text">📍 Place cute photo of yourself here</span>
             <img id="preview" src="" alt="Profile Photo">
-            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+            <input type="file" accept="image/*" onchange="previewImage(event)">
         </div>
     </div>
 
@@ -286,42 +286,34 @@
             <textarea id="heartSkip" rows="2" placeholder="What turns on your butterflies instantly?"></textarea>
         </div>
 
-        <div class="section-title">5. [PHYSICAL & EMOTIONAL BOUNDARIES]</div>
+        <div class="section-title">5. [COMFORT & AFFECTION PREFERENCES]</div>
         <div class="grid-2">
             <div class="form-group">
-                <label>Cuddling Stance</label>
+                <label>Cuddling Style</label>
                 <select id="cuddleStance">
                     <option>Big Spoon</option>
                     <option>Little Spoon</option>
-                    <option>Both Interlocked</option>
+                    <option>Both Interlocked Hugs</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Public Display of Affection (PDA)</label>
+                <label>Public Affection Level</label>
                 <select id="pdaPreference">
-                    <option>Discreet & Subtle</option>
-                    <option>Full-On Hand Holding & Kisses</option>
-                    <option>Private Only</option>
+                    <option>Cute Hand Holding & Sweet Looks</option>
+                    <option>Full-On Cute Hugs & Kisses</option>
+                    <option>Private & Shy Only</option>
                 </select>
             </div>
         </div>
 
-        <button type="button" id="submitBtn" onclick="submitDossier()">TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗</button>
+        <button type="button" onclick="submitDossier()">TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗</button>
     </form>
 </div>
 
 <script>
-    // ============================================================
-    // APNA WHATSAPP NUMBER YAHAN REPLACE KARO (91 ke saath):
     const YOUR_WHATSAPP_NUMBER = "917068634975"; 
-    // ============================================================
-
-    let uploadedImageUrl = "No photo attached";
 
     function previewImage(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-
         const reader = new FileReader();
         reader.onload = function(){
             const output = document.getElementById('preview');
@@ -329,32 +321,7 @@
             output.style.display = 'block';
             document.querySelector('.photo-text').style.display = 'none';
         };
-        reader.readAsDataURL(file);
-
-        // Upload to Free Image Server (imgbb) to get link
-        const formData = new FormData();
-        formData.append("image", file);
-
-        document.getElementById('submitBtn').innerText = "UPLOADING PHOTO...";
-
-        fetch("https://api.imgbb.com/1/upload?key=c03799cf766ed7ce5288544a4f8ad2aa", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if(data.success) {
-                uploadedImageUrl = data.data.url;
-                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
-            } else {
-                uploadedImageUrl = "Attached in chat";
-                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
-            }
-        })
-        .catch(err => {
-            uploadedImageUrl = "Attached directly in chat";
-            document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
-        });
+        reader.readAsDataURL(event.target.files[0]);
     }
 
     function submitDossier() {
@@ -378,7 +345,6 @@
         text += `*SUBJECT:* SHREE\n`;
         text += `*PROTOCOL:* SOULMATE\n\n`;
         text += `👤 *Agent:* ${name} (Nickname: ${nickname})\n`;
-        text += `🖼️ *Agent Photo:* ${uploadedImageUrl}\n\n`;
         text += `🎵 *Songs:* ${songs}\n`;
         text += `🎬 *Movies:* ${movies}\n\n`;
         text += `🔥 *Romance Directives Accepted:*\n${checkedDirectives || 'None selected'}\n\n`;
@@ -386,14 +352,15 @@
         text += `🖤 *When Silently Sad:* ${silentlySad}\n`;
         text += `✨ *Romantic Fantasy:* ${romanticFantasy}\n`;
         text += `💓 *Heart Skip Vibe:* ${heartSkip}\n\n`;
-        text += `🫂 *Cuddle Stance:* ${cuddle}\n`;
-        text += `💋 *PDA:* ${pda}\n\n`;
+        text += `🫂 *Cuddle Style:* ${cuddle}\n`;
+        text += `💋 *Public Affection:* ${pda}\n\n`;
+        text += `📸 *Note:* Attached my favorite photo in chat below!\n\n`;
         text += `*Status:* TRANSMISSION COMPLETE 💗`;
 
         const encodedText = encodeURIComponent(text);
         const whatsappUrl = `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodedText}`;
 
-        alert(`TRANSMISSION COMPLETE.\n\nRedirecting to secure WhatsApp channel to log responses for SHREE. 🖤✨`);
+        alert(`TRANSMISSION READY!\n\nNow redirecting to WhatsApp. Don't forget to attach your cute photo in the chat right after sending this message! 🖤✨`);
         window.open(whatsappUrl, '_blank');
     }
 </script>
