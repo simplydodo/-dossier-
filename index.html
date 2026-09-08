@@ -306,7 +306,7 @@
             </div>
         </div>
 
-        <button type="button" id="submitBtn" onclick="submitDossier()">TRANSMIT DOSSIER - ACTIVATE PROTOCOL 🖤</button>
+        <button type="button" id="submitBtn" onclick="submitDossier()">TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗</button>
     </form>
 </div>
 
@@ -345,15 +345,15 @@
         .then(data => {
             if(data.success) {
                 uploadedImageUrl = data.data.url;
-                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 🖤";
+                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
             } else {
                 uploadedImageUrl = "Attached in chat";
-                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 🖤";
+                document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
             }
         })
         .catch(err => {
             uploadedImageUrl = "Attached directly in chat";
-            document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 🖤";
+            document.getElementById('submitBtn').innerText = "TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗";
         });
     }
 
