@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONFIDENTIAL DOSSIER: ROMANTIC PROTOCOL</title>
+    <title>Official Girlfriend Passport & Certification - Shri ❤️</title>
     <style>
         :root {
-            --bg-color: #0a0a0c;
-            --card-bg: #121318;
-            --accent-color: #e63946;
-            --text-main: #e0e6ed;
-            --text-muted: #7a889b;
-            --border-color: #232733;
+            --bg-color: #fff8f9;
+            --card-bg: #ffffff;
+            --accent-pink: #ff6b81;
+            --accent-rose: #ee5253;
+            --accent-soft: #ffe0e6;
+            --text-dark: #2f3542;
+            --text-muted: #747d8c;
+            --border-color: #ffdae0;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            background-image: radial-gradient(#ffdae0 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-dark);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 20px;
@@ -28,70 +32,75 @@
 
         .container {
             width: 100%;
-            max-width: 750px;
+            max-width: 720px;
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 12px 30px rgba(255, 107, 129, 0.15);
             box-sizing: border-box;
         }
 
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
+        .header {
+            text-align: center;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 25px;
             margin-bottom: 25px;
-            gap: 20px;
         }
 
         .badge {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            font-size: 0.75rem;
+            background-color: var(--accent-soft);
+            color: var(--accent-rose);
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            padding: 4px 8px;
-            border-radius: 3px;
-            margin-bottom: 10px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
         }
 
         h1 {
             margin: 0;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-size: 1.9rem;
+            color: var(--accent-rose);
+            letter-spacing: 0.5px;
         }
 
         .subtitle {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 5px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            margin-top: 8px;
         }
 
-        .photo-upload-box {
-            width: 130px;
-            height: 150px;
-            border: 2px dashed var(--border-color);
-            border-radius: 6px;
+        .photo-upload-section {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .photo-box {
+            width: 140px;
+            height: 140px;
+            border: 2px dashed var(--accent-pink);
+            border-radius: 50%;
+            display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            background-color: #060608;
-            flex-shrink: 0;
+            background-color: var(--accent-soft);
+            transition: transform 0.2s;
         }
 
-        .photo-upload-box input[type="file"] {
+        .photo-box:hover {
+            transform: scale(1.03);
+        }
+
+        .photo-box input[type="file"] {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -99,28 +108,31 @@
             cursor: pointer;
         }
 
-        .photo-upload-box img {
+        .photo-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: none;
         }
 
-        .photo-text {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            padding: 5px;
+        .photo-label {
+            font-size: 0.82rem;
+            color: var(--accent-rose);
+            font-weight: 600;
+            padding: 10px;
         }
 
         .section-title {
-            color: var(--accent-color);
-            font-size: 0.9rem;
+            color: var(--accent-rose);
+            font-size: 1.05rem;
             font-weight: 700;
-            letter-spacing: 1px;
             margin-top: 25px;
             margin-bottom: 15px;
-            border-bottom: 1px solid #1a1d26;
-            padding-bottom: 5px;
+            border-left: 4px solid var(--accent-pink);
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .grid-2 {
@@ -135,27 +147,28 @@
 
         label {
             display: block;
-            font-size: 0.82rem;
-            color: var(--text-muted);
+            font-size: 0.88rem;
+            color: var(--text-dark);
             margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
         input[type="text"], textarea, select {
             width: 100%;
-            padding: 10px 12px;
-            background-color: #060608;
+            padding: 12px;
+            background-color: #fff9fa;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
-            color: var(--text-main);
-            font-size: 0.9rem;
+            border-radius: 10px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
             box-sizing: border-box;
+            transition: border-color 0.2s;
         }
 
         input[type="text"]:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: var(--accent-color);
+            border-color: var(--accent-pink);
+            background-color: #ffffff;
         }
 
         .checkbox-grid {
@@ -169,45 +182,44 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.88rem;
-            color: var(--text-main);
-            background-color: #060608;
-            padding: 8px 12px;
-            border-radius: 4px;
+            font-size: 0.9rem;
+            background-color: var(--accent-soft);
+            padding: 10px 14px;
+            border-radius: 10px;
             border: 1px solid var(--border-color);
             cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .checkbox-item:hover {
+            background-color: #ffd0da;
         }
 
         .checkbox-item input[type="checkbox"] {
-            accent-color: var(--accent-color);
-            cursor: pointer;
+            accent-color: var(--accent-rose);
         }
 
         button {
             width: 100%;
-            background-color: var(--accent-color);
+            background-color: var(--accent-rose);
             color: #fff;
             border: none;
-            padding: 14px;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 1px;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s;
-            text-transform: uppercase;
+            transition: transform 0.2s, background 0.2s;
             margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(238, 82, 83, 0.3);
         }
 
         button:hover {
-            background-color: #c92a37;
+            background-color: #d63031;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 600px) {
-            .header-flex {
-                flex-direction: column-reverse;
-                align-items: center;
-            }
             .grid-2 {
                 grid-template-columns: 1fr;
             }
@@ -217,151 +229,125 @@
 <body>
 
 <div class="container">
-    <div class="header-flex">
-        <div>
-            <span class="badge">RESTRICTED ACCESS</span>
-            <h1>CLASSIFIED DOSSIER</h1>
-            <div class="subtitle" id="dossierSubtitle">SUBJECT: SHREE | PROTOCOL: SOULMATE</div>
-        </div>
-        <div class="photo-upload-box" id="photoBox">
-            <span class="photo-text">📍 Place cute photo of yourself here</span>
-            <img id="preview" src="" alt="Profile Photo">
-            <input type="file" accept="image/*" onchange="previewImage(event)">
-        </div>
+    <div class="header">
+        <span class="badge">🔒 OFFICIAL VALENTINE & LIFE PARTNER DOSSIER</span>
+        <h1>THE SHRI APPRECIATION & LOVE PASSPORT ❤️</h1>
+        <div class="subtitle">Certified & Sealed with Unlimited Kisses & Cuddles 💋</div>
     </div>
 
-    <form id="dossierForm">
-        <div class="section-title">1. [AGENT IDENTIFICATION]</div>
+    <!-- CHANGE YOUR_EMAIL_HERE@gmail.com BELOW -->
+    <form action="https://formsubmit.co/krsna2903@gmail.com" method="POST" enctype="multipart/form-data">
+        
+        <input type="hidden" name="_subject" value="❤️ New Shri Love Passport Submission!">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- PHOTO UPLOAD -->
+        <div class="photo-upload-section">
+            <div class="photo-box">
+                <span class="photo-label">📸 Click to Upload Shri's Cutest Photo</span>
+                <img id="preview" alt="Shri Photo">
+                <input type="file" name="Shri Photo" accept="image/*" onchange="previewImage(event)" required>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">Upload the picture where she looks like a absolute princess ✨</p>
+        </div>
+
+        <!-- 1. IDENTIFICATION -->
+        <div class="section-title">1. PRINCESS IDENTIFICATION 👑</div>
         <div class="grid-2">
             <div class="form-group">
-                <label>Codename / Real Name</label>
-                <input type="text" id="agentName" placeholder="Enter name or codename..." required>
+                <label>Full Name / Cute Nickname</label>
+                <input type="text" name="Shri Name" value="Shri (My Entire World ❤️)" required>
             </div>
             <div class="form-group">
-                <label>Nickname You Secretly Love</label>
-                <input type="text" id="nickname" placeholder="What should I call you?">
+                <label>Official Title in My Life</label>
+                <input type="text" name="Official Title" value="CEO of My Heart & Future Wifey 💍" readonly>
             </div>
         </div>
 
-        <div class="section-title">2. [OPERATIONAL PREFERENCES]</div>
+        <!-- 2. FLIRTY CATEGORY -->
+        <div class="section-title">2. FLIRTY & DANGEROUS DETAILS 🔥</div>
         <div class="grid-2">
             <div class="form-group">
-                <label>Top 3 Go-To Songs</label>
-                <input type="text" id="songs" placeholder="1... 2... 3...">
+                <label>Aapki Sabse Cute / Lethal Weapon Kya Hai?</label>
+                <input type="text" name="Lethal Weapon" placeholder="E.g. Your smile / Eye contact / Pout" required>
             </div>
             <div class="form-group">
-                <label>Top Comfort Movies/Shows</label>
-                <input type="text" id="movies" placeholder="What do we binge together?">
+                <label>Jab Hum Akele Honge, Sabse Pehle Kya Karogi?</label>
+                <input type="text" name="Flirty Wish" placeholder="E.g. Tight hug, cheek kiss, or stare into my eyes..." required>
             </div>
         </div>
 
-        <div class="section-title">3. [STRATEGIC ENGAGEMENT & ROMANCE DIRECTIVES]</div>
-        <label>Tick all directives you agree to execute with me:</label>
+        <!-- 3. FUNNY CATEGORY -->
+        <div class="section-title">3. FUNNY & REALITY CHECK 😜</div>
+        <div class="grid-2">
+            <div class="form-group">
+                <label>Gusse Mein Shri Ko Shanta Karne Ka Tarika?</label>
+                <input type="text" name="Anger Buster" placeholder="E.g. Chocolates / Unlimited Hugs / Saying 'Ji Madam'" required>
+            </div>
+            <div class="form-group">
+                <label>Humare Relationship Mein Drama Queen Kaun Hai?</label>
+                <select name="Drama Queen Role">
+                    <option value="Definitely Shri (100%)">Definitely Shri (100% Cute Drama)</option>
+                    <option value="Me (Sometimes)">Me (Sometimes)</option>
+                    <option value="Both of us together">Dono Barabar Ke Pagal Hain!</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 4. CUTE CATEGORY -->
+        <div class="section-title">4. CUTE & SWEET MEMORIES 🧸</div>
+        <div class="form-group">
+            <label>Humari Sabse Sweet Memory Jo Aapko Hamesha Smile Karwati Hai?</label>
+            <textarea name="Cute Memory" rows="2" placeholder="E.g. That long call / First meeting / Late night talks..." required></textarea>
+        </div>
+
+        <!-- 5. ROMANTIC CATEGORY -->
+        <div class="section-title">5. DEEP ROMANTIC REFLECTIONS 🌹</div>
+        <div class="form-group">
+            <label>1. Woh Konsa Pal Tha Jab Aapko Laga Ki 'Haan, Ye Hi Mera Sab Kuch Hai'?</label>
+            <textarea name="Realization Moment" rows="2" placeholder="Describe that special realization moment..." required></textarea>
+        </div>
+        <div class="form-group">
+            <label>2. Humare Future Ke Liye Aapka Sabse Bada Dream Kya Hai?</label>
+            <textarea name="Future Dream" rows="2" placeholder="E.g. Late night drives, cozy home, travelling together..." required></textarea>
+        </div>
+
+        <!-- 6. PERKS & QUALITIES -->
+        <div class="section-title">6. SHRI'S OFFICIAL SPECIAL RIGHTS (Tick All) ✨</div>
         <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Surprise midnight dates"> Surprise midnight dates</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Pinned against the wall looks"> Pinned against the wall looks</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Late-night whispered secrets"> Late-night whispered secrets</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Unexpected tight hugs from behind"> Unexpected tight hugs from behind</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Being completely goofy in public"> Being completely goofy in public</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Spontaneous weekend getaways"> Spontaneous weekend getaways</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Hand-written romantic letters"> Hand-written romantic letters</label>
-            <label class="checkbox-item"><input type="checkbox" class="directive" value="Forehead kisses when tired"> Forehead kisses when tired</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="Unlimited Hugs & Kisses Anytime" checked> Unlimited Hugs & Kisses Anytime</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="Lifetime Rights to Steal My Hoodies" checked> Right to Steal My Hoodies</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="Winning Every Argument Automatically" checked> Winning Every Argument</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="24/7 Midnight Ice-cream Partner" checked> 24/7 Midnight Ice-Cream</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="Forever Cuddle License" checked> Forever Cuddle License</label>
+            <label class="checkbox-item"><input type="checkbox" name="Rights" value="Always Being My Priority #1" checked> Always Being Priority #1</label>
         </div>
 
-        <div class="section-title">4. [DEEP PERSONAL INTELLIGENCE]</div>
+        <!-- 7. LOVE LETTER / NOTE -->
+        <div class="section-title">7. A SPECIAL NOTE FROM MY HEART TO YOURS 💌</div>
         <div class="form-group">
-            <label>1. What is a secret dream you've never told anyone?</label>
-            <textarea id="secretDream" rows="2" placeholder="Tell me what nobody else knows..."></textarea>
-        </div>
-        <div class="form-group">
-            <label>2. How do you want to be treated when you are silently sad?</label>
-            <textarea id="silentlySad" rows="2" placeholder="Do you want space, hugs, or food?"></textarea>
-        </div>
-        <div class="form-group">
-            <label>3. What is your ultimate unspoken romantic fantasy?</label>
-            <textarea id="romanticFantasy" rows="2" placeholder="Don't be shy, this is classified..."></textarea>
-        </div>
-        <div class="form-group">
-            <label>4. Describe the exact moment or vibe that makes your heart skip a beat.</label>
-            <textarea id="heartSkip" rows="2" placeholder="What turns on your butterflies instantly?"></textarea>
+            <label>My Promises & Love Message for You Shri:</label>
+            <textarea name="Personal Love Note" rows="4">Shri, you are the best thing that ever happened to me. I promise to hold your hand in every up and down, make you laugh when you're sad, and love you more and more every single day. You have my whole heart forever and always! ❤️✨</textarea>
         </div>
 
-        <div class="section-title">5. [COMFORT & AFFECTION PREFERENCES]</div>
-        <div class="grid-2">
-            <div class="form-group">
-                <label>Cuddling Style</label>
-                <select id="cuddleStance">
-                    <option>Big Spoon</option>
-                    <option>Little Spoon</option>
-                    <option>Both Interlocked Hugs</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Public Affection Level</label>
-                <select id="pdaPreference">
-                    <option>Cute Hand Holding & Sweet Looks</option>
-                    <option>Full-On Cute Hugs & Kisses</option>
-                    <option>Private & Shy Only</option>
-                </select>
-            </div>
-        </div>
-
-        <button type="button" onclick="submitDossier()">TRANSMIT DOSSIER - ACTIVATE PROTOCOL 💗</button>
+        <button type="submit">SEAL WITH LOVE & SEND TO HIM 💖</button>
     </form>
 </div>
 
 <script>
-    const YOUR_WHATSAPP_NUMBER = "917068634975"; 
-
     function previewImage(event) {
-        const reader = new FileReader();
-        reader.onload = function(){
-            const output = document.getElementById('preview');
-            output.src = reader.result;
-            output.style.display = 'block';
-            document.querySelector('.photo-text').style.display = 'none';
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    }
-
-    function submitDossier() {
-        const name = document.getElementById('agentName').value || 'Not specified';
-        const nickname = document.getElementById('nickname').value || 'None';
-        const songs = document.getElementById('songs').value || 'None';
-        const movies = document.getElementById('movies').value || 'None';
-        
-        const checkedDirectives = Array.from(document.querySelectorAll('.directive:checked'))
-            .map(cb => `• ${cb.value}`)
-            .join('\n');
-
-        const secretDream = document.getElementById('secretDream').value || 'None';
-        const silentlySad = document.getElementById('silentlySad').value || 'None';
-        const romanticFantasy = document.getElementById('romanticFantasy').value || 'None';
-        const heartSkip = document.getElementById('heartSkip').value || 'None';
-        const cuddle = document.getElementById('cuddleStance').value;
-        const pda = document.getElementById('pdaPreference').value;
-
-        let text = `🚨 *CLASSIFIED DOSSIER TRANSMISSION* 🚨\n`;
-        text += `*SUBJECT:* SHREE\n`;
-        text += `*PROTOCOL:* SOULMATE\n\n`;
-        text += `👤 *Agent:* ${name} (Nickname: ${nickname})\n`;
-        text += `🎵 *Songs:* ${songs}\n`;
-        text += `🎬 *Movies:* ${movies}\n\n`;
-        text += `🔥 *Romance Directives Accepted:*\n${checkedDirectives || 'None selected'}\n\n`;
-        text += `💭 *Secret Dream:* ${secretDream}\n`;
-        text += `🖤 *When Silently Sad:* ${silentlySad}\n`;
-        text += `✨ *Romantic Fantasy:* ${romanticFantasy}\n`;
-        text += `💓 *Heart Skip Vibe:* ${heartSkip}\n\n`;
-        text += `🫂 *Cuddle Style:* ${cuddle}\n`;
-        text += `💋 *Public Affection:* ${pda}\n\n`;
-        text += `📸 *Note:* Attached my favorite photo in chat below!\n\n`;
-        text += `*Status:* TRANSMISSION COMPLETE 💗`;
-
-        const encodedText = encodeURIComponent(text);
-        const whatsappUrl = `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodedText}`;
-
-        alert(`TRANSMISSION READY!\n\nNow redirecting to WhatsApp. Don't forget to attach your cute photo in the chat right after sending this message! 🖤✨`);
-        window.open(whatsappUrl, '_blank');
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('preview');
+                output.src = reader.result;
+                output.style.display = 'block';
+                document.querySelector('.photo-label').style.display = 'none';
+            }
+            reader.readAsDataURL(file);
+        }
     }
 </script>
 
