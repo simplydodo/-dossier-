@@ -151,8 +151,9 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             color: var(--text-dark);
-            font-size: 0.95rem;
+            font-size: 0.90rem;
             box-sizing: border-box;
+            text-overflow: ellipsis;
         }
 
         input[type="text"]:focus, textarea:focus, select:focus {
@@ -180,7 +181,26 @@
             cursor: pointer;
         }
 
-        .checkbox-item input[type="checkbox"] {
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            accent-color: var(--accent-rose);
+        }
+
+        .declaration-box {
+            background-color: #fff9fa;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .declaration-box input[type="checkbox"] {
+            margin-top: 3px;
             accent-color: var(--accent-rose);
         }
 
@@ -218,7 +238,7 @@
         <div class="subtitle">Fill this out my cutie to claim your lifetime partner benefits 💋</div>
     </div>
 
-    <!-- Line 172: Yahan apni Gmail ID daalna -->
+    <!-- Line 180: Yahan apni Gmail ID daalna -->
     <form action="https://formsubmit.co/krsna2903@gmail.com" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="_subject" value="❤️ New Shri Love Dossier Submission!">
@@ -253,11 +273,11 @@
         <div class="grid-2">
             <div class="form-group">
                 <label>Aapki Sabse Killer Weapon Kya Hai?</label>
-                <input type="text" name="Lethal Weapon" placeholder="E.g. Meri smile, meri aankhein, ya mera pout..." required>
+                <input type="text" name="Lethal Weapon" placeholder="Smile / Eyes / Pout..." required>
             </div>
             <div class="form-group">
                 <label>Jab Hum Next Time Milenge, Sabse Pehle Kya Karogi?</label>
-                <input type="text" name="Flirty Wish" placeholder="E.g. Tight hug, cheek kiss, ya haath pakadna..." required>
+                <input type="text" name="Flirty Wish" placeholder="Tight hug / Cheek kiss / Hand hold..." required>
             </div>
         </div>
 
@@ -266,7 +286,7 @@
         <div class="grid-2">
             <div class="form-group">
                 <label>Gusse Mein Aapko Kaise Manaayein?</label>
-                <input type="text" name="Anger Buster" placeholder="E.g. Chocolates / Extra Hugs / Saying 'Ji Madam'" required>
+                <input type="text" name="Anger Buster" placeholder="Chocolates / Hugs / 'Ji Madam'..." required>
             </div>
             <div class="form-group">
                 <label>Humare Relationship Mein Drama Queen Kaun Hai?</label>
@@ -278,7 +298,7 @@
             </div>
         </div>
 
-        <!-- 4. CUTE CATEGORY -->
+        <!-- 4. CUTE MEMORIES -->
         <div class="section-title">4. CUTE MEMORIES 🧸</div>
         <div class="form-group">
             <label>Humari Sabse Sweet Memory Jo Aapko Hamesha Smile Karwati Hai?</label>
@@ -293,11 +313,32 @@
         </div>
         <div class="form-group">
             <label>2. Humare Future Ke Liye Aapka Sabse Bada Dream Kya Hai?</label>
-            <textarea name="Future Dream" rows="2" placeholder="E.g. Late night drives, cozy home, travelling together..." required></textarea>
+            <textarea name="Future Dream" rows="2" placeholder="Late night drives / Cozy home / Travelling..." required></textarea>
         </div>
 
-        <!-- 6. SPECIAL RIGHTS -->
-        <div class="section-title">6. YOUR OFFICIAL SPECIAL RIGHTS (Tick All) ✨</div>
+        <!-- 6. PUBLIC & SOCIAL DISPLAY OPTIONS (NEW ADDED) -->
+        <div class="section-title">6. PUBLIC & SOCIAL STYLE 🌐</div>
+        <div class="form-group">
+            <label>Public Mein Humara PDA / Affection Style Kaisa Hoga?</label>
+            <select name="Public PDA Comfort">
+                <option value="Cute Hand Holding & Shoulder Lean">Cute Hand Holding & Shoulder Lean 🤝</option>
+                <option value="Random Cheek Kisses & Hugs Everywhere">Random Cheek Kisses & Hugs Everywhere 💋</option>
+                <option value="Full Romantic Couple Vibes">Full Romantic Couple Vibes 🔥</option>
+                <option value="Shy In Public, Crazy In Private">Shy In Public, Super Romantic In Private 🙈</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Social Media / Public Announcement Style?</label>
+            <select name="Social Media Level">
+                <option value="Soft Launching Pictures">Aesthetic Soft Launch Photos 📸</option>
+                <option value="Flexing Everywhere">Flexing Our Cute Photos Everywhere 📲</option>
+                <option value="Private & Protected">Keeping Our Bond Private, Protected & Special 🔒</option>
+            </select>
+        </div>
+
+        <!-- 7. SPECIAL RIGHTS -->
+        <div class="section-title">7. YOUR OFFICIAL SPECIAL RIGHTS (Tick All) ✨</div>
         <div class="checkbox-grid">
             <label class="checkbox-item"><input type="checkbox" name="Rights" value="Unlimited Hugs & Kisses Anytime" checked> Unlimited Hugs & Kisses</label>
             <label class="checkbox-item"><input type="checkbox" name="Rights" value="Right to Steal My Hoodies" checked> Right to Steal My Hoodies</label>
@@ -307,11 +348,29 @@
             <label class="checkbox-item"><input type="checkbox" name="Rights" value="Always Being Priority #1" checked> Always Priority #1</label>
         </div>
 
-        <!-- 7. LOVE LETTER -->
-        <div class="section-title">7. A SPECIAL NOTE FOR YOU 💌</div>
+        <!-- 8. LOVE LETTER -->
+        <div class="section-title">8. A SPECIAL NOTE FOR YOU 💌</div>
         <div class="form-group">
             <label>My Promises For You Shri:</label>
             <textarea name="Personal Love Note" rows="3" readonly>Shri, you are the best thing that ever happened to me. I promise to hold your hand in every up and down, make you laugh, and love you more every single day. You have my whole heart forever and always! ❤️✨</textarea>
+        </div>
+
+        <!-- 9. PUBLIC DECLARATION & PLEDGE -->
+        <div class="section-title">9. OFFICIAL DECLARATION & PLEDGE 📜</div>
+        <div class="declaration-box">
+            <input type="checkbox" name="Public Declaration" value="Accepted" id="dec" required checked>
+            <label for="dec" style="font-weight: 400; margin-bottom: 0;">Main (Shri) officially accept karti hu ki mera dil hamesha ke liye reserved hai aur main iss lover dossier ke saare rights & terms se fully agree karti hu! 💖</label>
+        </div>
+
+        <div class="grid-2" style="margin-top: 15px;">
+            <div class="form-group">
+                <label>Aapki Digital Signature (Apna Cute Name)</label>
+                <input type="text" name="Digital Signature" placeholder="Sign here (e.g. Yours Shri 🪷)" required>
+            </div>
+            <div class="form-group">
+                <label>Aaj Ki Date</label>
+                <input type="text" name="Submission Date" placeholder="DD/MM/YYYY" required>
+            </div>
         </div>
 
         <button type="submit">SEAL WITH LOVE & SUBMIT 💖</button>
